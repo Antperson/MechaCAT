@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtwj1wjmxf1es"]
+
+[ext_resource type="Texture2D" uid="uid://n4phai3xvmum" path="res://Main Character/MechaCat.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://o3u6lxfpl6rs" path="res://Scripts/player.gd" id="1_cvnsp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig7tw"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ig7tw")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3pqv"]
+radius = 14.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_cvnsp")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -33)
+sprite_frames = SubResource("SpriteFrames_onrkg")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.646824
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -26)
+shape = SubResource("CircleShape2D_i3pqv")
