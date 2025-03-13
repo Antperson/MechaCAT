@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://c2mvm7uhuud56"]
+[gd_scene load_steps=3 format=3 uid="uid://c2mvm7uhuud56"]
+
+[ext_resource type="Texture2D" uid="uid://dbwuw4sin55dk" path="res://Enemies/Enemy_Minion.png" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://n4phai3xvmum" path="res://Main Character/MechaCat.png" id="2_h2yge"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(112, 0)
+texture = ExtResource("1_0xm2m")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_h2yge")
