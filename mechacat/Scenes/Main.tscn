@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dot1aesh27ywy"]
+[gd_scene load_steps=3 format=3 uid="uid://dot1aesh27ywy"]
 
 [ext_resource type="PackedScene" uid="uid://dtwj1wjmxf1es" path="res://Scenes/player.tscn" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://bukk866yhl1nm" path="res://Scenes/enemy.tscn" id="2_idj7w"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_r150o")]
+visible = false
+position = Vector2(32, 77)
+
+[node name="Enemy" parent="." instance=ExtResource("2_idj7w")]
+position = Vector2(474, 334)
