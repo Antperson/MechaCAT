@@ -33,6 +33,10 @@ region = Rect2(330, 0, 66, 66)
 atlas = ExtResource("2_cvnsp")
 region = Rect2(396, 0, 66, 66)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqcod"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(462, 0, 66, 66)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tx1dd"]
 atlas = ExtResource("2_6t5aa")
 region = Rect2(0, 0, 66, 66)
@@ -60,10 +64,6 @@ region = Rect2(330, 0, 66, 66)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fd4e3"]
 atlas = ExtResource("2_6t5aa")
 region = Rect2(396, 0, 66, 66)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qqcod"]
-atlas = ExtResource("2_6t5aa")
-region = Rect2(462, 0, 66, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igrcy"]
 atlas = ExtResource("4_vgqql")
@@ -128,12 +128,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f1ek2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t5aa")
 }],
 "loop": true,
 "name": &"Idle",
 "speed": 16.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqcod")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tx1dd")
 }, {
@@ -192,6 +198,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vfarp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igrcy")
 }],
 "loop": false,
 "name": &"Slash",
@@ -207,9 +216,10 @@ script = ExtResource("1_cvnsp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -33)
 sprite_frames = SubResource("SpriteFrames_onrkg")
-animation = &"Slash"
-autoplay = "Idle"
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -26)
 shape = SubResource("CircleShape2D_i3pqv")
+
+[node name="Gun" type="Marker2D" parent="."]
