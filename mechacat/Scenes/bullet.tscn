@@ -70,15 +70,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1l14f"]
 radius = 9.0
 
-[node name="Bullet" type="Area2D"]
+[node name="Area2D" type="Area2D"]
 script = ExtResource("1_xjght")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lv37c")
 animation = &"Pellet"
-autoplay = "Pellet"
-frame = 1
-frame_progress = 0.402088
+frame_progress = 0.161723
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1l14f")
