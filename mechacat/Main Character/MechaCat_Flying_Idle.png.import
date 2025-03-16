@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n4phai3xvmum"
-path="res://.godot/imported/MechaCat.png-964a90da111320ac454f16eb7b5402c7.ctex"
+uid="uid://c4646d2vy6gng"
+path="res://.godot/imported/MechaCat_Flying_Idle.png-80fadda3303623a8006ad22e841eb831.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Main Character/MechaCat.png"
-dest_files=["res://.godot/imported/MechaCat.png-964a90da111320ac454f16eb7b5402c7.ctex"]
+source_file="res://Main Character/MechaCat_Flying_Idle.png"
+dest_files=["res://.godot/imported/MechaCat_Flying_Idle.png-80fadda3303623a8006ad22e841eb831.ctex"]
 
 [params]
 

@@ -15,5 +15,5 @@ zoom = Vector2(4, 4)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 20)
+position = Vector2(0, 81)
 shape = SubResource("WorldBoundaryShape2D_jjgbg")
