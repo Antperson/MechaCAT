@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdpvorprv8hqq"]
+
+[ext_resource type="Texture2D" uid="uid://b2ikdt2xxopcq" path="res://Background/Stage1_Sky.png" id="1_53x5a"]
+[ext_resource type="Texture2D" uid="uid://dobgqkga8lsr6" path="res://Background/Stage1_Clouds.png" id="2_kfw77"]
+[ext_resource type="Texture2D" uid="uid://d1kahdr17ea12" path="res://Background/Stage1_Moon.png" id="3_sj034"]
+[ext_resource type="Texture2D" uid="uid://ca6qene1vkfi4" path="res://Background/Stage1_City.png" id="4_ia12x"]
+[ext_resource type="Texture2D" uid="uid://c7ba0omj4n38y" path="res://Background/Stage1_Water2.png" id="5_1na8k"]
+[ext_resource type="Texture2D" uid="uid://mrq8yo80vsw3" path="res://Background/Stage1_Water.png" id="6_nam1v"]
+
+[sub_resource type="GDScript" id="GDScript_53x5a"]
+script/source = "extends ParallaxBackground
+
+var Sky_Speed = -15
+var Cloud_Speed = -15
+var Moon_Speed = -15
+var City_Speed = -15
+var Water2_Speed = -15
+var Water_Speed = -15
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	#$ParallaxBackground/Sky.motion_offset.x += Sky_Speed * delta
+	pass
+	
+"
+
+[node name="Parallax" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = SubResource("GDScript_53x5a")
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(540, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+position = Vector2(0, -1)
+texture = ExtResource("1_53x5a")
+
+[node name="Moon" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(540, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Moon"]
+position = Vector2(0, -1)
+texture = ExtResource("3_sj034")
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(540, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+position = Vector2(0, -1)
+texture = ExtResource("2_kfw77")
+
+[node name="City" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(540, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/City"]
+position = Vector2(0, -1)
+texture = ExtResource("4_ia12x")
+
+[node name="Water2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(540, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Water2"]
+position = Vector2(0, -1)
+texture = ExtResource("5_1na8k")
+
+[node name="Water" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.5, 1)
+motion_mirroring = Vector2(540, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Water"]
+position = Vector2(0, -1)
+texture = ExtResource("6_nam1v")

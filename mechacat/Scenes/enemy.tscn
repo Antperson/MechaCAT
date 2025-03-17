@@ -1,8 +1,9 @@
-[gd_scene load_steps=36 format=3 uid="uid://bukk866yhl1nm"]
+[gd_scene load_steps=45 format=3 uid="uid://bukk866yhl1nm"]
 
-[ext_resource type="Script" uid="uid://2w2id5bawy13" path="res://Scenes/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Script" uid="uid://2w2id5bawy13" path="res://Scripts/enemy.gd" id="1_1f0kj"]
 [ext_resource type="Texture2D" uid="uid://pnvoy0nhu2es" path="res://Enemies/Boss1_FlareAttack_74x74..png" id="2_afpow"]
 [ext_resource type="Texture2D" uid="uid://vokn00ok13es" path="res://Enemies/Boss1_Idle_74x74..png" id="3_287tu"]
+[ext_resource type="Texture2D" uid="uid://bbltaonac5qdt" path="res://Enemies/Boss1_BasicShoot.png" id="4_287tu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0830c"]
 atlas = ExtResource("2_afpow")
@@ -128,6 +129,38 @@ region = Rect2(666, 0, 74, 74)
 atlas = ExtResource("3_287tu")
 region = Rect2(740, 0, 74, 74)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1gwg"]
+atlas = ExtResource("4_287tu")
+region = Rect2(0, 0, 74, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mxp7"]
+atlas = ExtResource("4_287tu")
+region = Rect2(74, 0, 74, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a56t"]
+atlas = ExtResource("4_287tu")
+region = Rect2(148, 0, 74, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6sir"]
+atlas = ExtResource("4_287tu")
+region = Rect2(222, 0, 74, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ej4m"]
+atlas = ExtResource("4_287tu")
+region = Rect2(296, 0, 74, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwheg"]
+atlas = ExtResource("4_287tu")
+region = Rect2(370, 0, 74, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iol0x"]
+atlas = ExtResource("4_287tu")
+region = Rect2(444, 0, 74, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofqcr"]
+atlas = ExtResource("4_287tu")
+region = Rect2(518, 0, 74, 74)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_c1gwg"]
 animations = [{
 "frames": [{
@@ -190,6 +223,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4ycey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0830c")
 }],
 "loop": true,
 "name": &"attack",
@@ -232,6 +268,38 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1gwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mxp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a56t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6sir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ej4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwheg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iol0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofqcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1gwg")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 12.0
 }]
 
 [node name="Enemy" type="Node2D"]
@@ -240,9 +308,9 @@ script = ExtResource("1_1f0kj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -37)
 sprite_frames = SubResource("SpriteFrames_c1gwg")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.632397
+frame_progress = 0.867924
 flip_h = true
 
 [node name="ShootTimer" type="Timer" parent="."]

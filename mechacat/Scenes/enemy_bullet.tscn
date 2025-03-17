@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://ckq3ds3tqww0w"]
 
-[ext_resource type="Script" uid="uid://cq63532ddr0og" path="res://Scenes/enemy_bullet.gd" id="1_54jiv"]
+[ext_resource type="Script" uid="uid://cq63532ddr0og" path="res://Scripts/enemy_bullet.gd" id="1_54jiv"]
 [ext_resource type="Texture2D" uid="uid://dnmwug8kw68kx" path="res://Enemies/Bubble_32x32.png" id="2_54jiv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6yqb"]
