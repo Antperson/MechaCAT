@@ -242,12 +242,12 @@ position = Vector2(-1, -37)
 sprite_frames = SubResource("SpriteFrames_c1gwg")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.414409
+frame_progress = 0.632397
 flip_h = true
 
 [node name="ShootTimer" type="Timer" parent="."]
 
 [node name="Rotator" type="Node2D" parent="."]
-position = Vector2(1, -27)
+position = Vector2(0, -26)
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
