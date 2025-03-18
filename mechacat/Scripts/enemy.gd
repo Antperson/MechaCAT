@@ -5,16 +5,16 @@ const bullet_scene = preload("res://Scenes/enemy_bullet.tscn")
 @onready var rotator: Node2D = $Rotator
 
 
-const rotate_speed = 100
+const rotate_speed = 0
 const shoot_timer_wait_time = 1
-const spawn_point_count = 4
-const radius = 100
+const spawn_point_count = 1
+const radius = 50
 
 func _ready() -> void:
 	var step = 2 * PI / spawn_point_count
 	for i in range(spawn_point_count):
 		var spawn_point = Node2D.new()
-		var pos = Vector2(radius, 0).rotated(step * i)
+		var pos = Vector2(-radius, 0).rotated(step * i)
 		spawn_point.position = pos
 		spawn_point.rotation = pos.angle()
 		rotator.add_child(spawn_point)

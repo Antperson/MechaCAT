@@ -316,6 +316,6 @@ flip_h = true
 [node name="ShootTimer" type="Timer" parent="."]
 
 [node name="Rotator" type="Node2D" parent="."]
-position = Vector2(0, -26)
+position = Vector2(-21, -37)
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
