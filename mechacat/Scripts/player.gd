@@ -36,3 +36,5 @@ func shoot():
 	var b = bullet.instantiate()
 	b.position = $Rotator.position
 	get_parent().add_child(b)
+	b.position = $Rotator.global_position
+	b.rotation = $Rotator.global_rotation
