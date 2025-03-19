@@ -8,7 +8,7 @@ const bullet_scene = preload("res://Scenes/enemy_bullet.tscn")
 const rotate_speed = 0
 const shoot_timer_wait_time = 1
 const spawn_point_count = 1
-const radius = 50
+const radius = 20
 
 func _ready() -> void:
 	var step = 2 * PI / spawn_point_count
@@ -21,13 +21,13 @@ func _ready() -> void:
 		
 	shoot_timer.wait_time = shoot_timer_wait_time
 	shoot_timer.start()
+	$AnimatedSprite2D.play("attack")
 
 func _process(delta: float) -> void:
 	var new_rotation = rotator.rotation_degrees + rotate_speed * delta
 	rotator.rotation_degrees = fmod(new_rotation, 360)
 
 func _on_shoot_timer_timeout() -> void:
-	$AnimatedSprite2D.play("attack")
 	for s in rotator.get_children():
 		var bullet = bullet_scene.instantiate()
 		get_tree().root.add_child(bullet)

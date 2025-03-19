@@ -1,9 +1,15 @@
 extends Node2D
 
-const speed = 100
+@export var speed: int = 100
+@export var offset: float = 0.0
+@export var frequency: int = 0
+@export var amplitude: float = 0.0
+@onready var timer: Timer = $Area2D/Timer
 
 func _process(delta: float) -> void:
-	position += transform.x * speed * delta
+	timer.start()
+	offset += delta
+	position += transform.x * speed * delta + transform.y * sin(offset * frequency) * amplitude
 
 
 
