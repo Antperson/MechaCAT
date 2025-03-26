@@ -40,9 +40,11 @@ func taking_dmg():
 	if hp<0:
 		queue_free()
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(true)
-
-
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	taking_dmg()
+
+
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	taking_dmg()
