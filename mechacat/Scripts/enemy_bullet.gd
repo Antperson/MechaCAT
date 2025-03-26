@@ -14,11 +14,6 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	var e = exp.instantiate()
-	e.position = position
-	e.position = global_position
-	e.rotation = global_rotation
-	get_parent().add_child(e)
 	queue_free()
 
 

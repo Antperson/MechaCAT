@@ -8,7 +8,8 @@ const bullet_scene = preload("res://Scenes/enemy_bullet.tscn")
 const rotate_speed = 0
 const shoot_timer_wait_time = 1
 const spawn_point_count = 1
-const radius = 20
+const radius = 50
+var hp = 5
 
 func _ready() -> void:
 	var step = 2 * PI / spawn_point_count
@@ -33,3 +34,15 @@ func _on_shoot_timer_timeout() -> void:
 		get_tree().root.add_child(bullet)
 		bullet.position = s.global_position
 		bullet.rotation = s.global_rotation
+
+func taking_dmg():
+	hp -= 1
+	if hp<0:
+		queue_free()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print(true)
+
+
+func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	taking_dmg()
