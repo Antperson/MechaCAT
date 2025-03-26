@@ -68,10 +68,10 @@ lifetime_randomness = 1.0
 particle_flag_disable_z = true
 emission_shape = 1
 emission_sphere_radius = 20.0
-direction = Vector3(0, 1, 0)
+direction = Vector3(0, -1, 0)
 initial_velocity_min = 120.0
 initial_velocity_max = 180.0
-gravity = Vector3(0, 10, 0)
+gravity = Vector3(0, 1, 0)
 linear_accel_curve = SubResource("CurveTexture_f2nln")
 radial_accel_min = -2.23517e-06
 radial_accel_max = 60.0
@@ -111,6 +111,7 @@ color_ramp = SubResource("GradientTexture1D_0dy5s")
 script = ExtResource("1_ix64a")
 
 [node name="Core" type="GPUParticles2D" parent="."]
+modulate = Color(2, 1, 1, 1)
 emitting = false
 amount = 25
 lifetime = 2.0
@@ -131,6 +132,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_mma61")
 
 [node name="Fire" type="GPUParticles2D" parent="."]
+modulate = Color(2, 1, 1, 1)
 emitting = false
 amount = 30
 one_shot = true
