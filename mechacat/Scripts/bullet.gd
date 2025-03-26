@@ -1,6 +1,7 @@
 extends Area2D
 
 var speed = 150
+@onready var player_bullet: Area2D = $"."
 
 func _physics_process(delta):
 	position += transform.x * speed * delta
@@ -15,4 +16,5 @@ func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	queue_free()
+	if area == player_bullet:
+		queue_free()
