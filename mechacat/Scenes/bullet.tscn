@@ -76,6 +76,7 @@ collision_mask = 4
 script = ExtResource("1_xjght")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1.5, 1.5, 1.5, 1)
 sprite_frames = SubResource("SpriteFrames_lv37c")
 animation = &"Pellet"
 autoplay = "Pellet"
