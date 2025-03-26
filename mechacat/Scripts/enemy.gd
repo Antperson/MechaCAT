@@ -9,7 +9,7 @@ const rotate_speed = 0
 const shoot_timer_wait_time = 1
 const spawn_point_count = 1
 const radius = 50
-var hp = 5
+@export var hp = 5
 
 func _ready() -> void:
 	var step = 2 * PI / spawn_point_count
