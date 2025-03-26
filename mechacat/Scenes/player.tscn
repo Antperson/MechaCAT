@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://dtwj1wjmxf1es"]
+[gd_scene load_steps=33 format=3 uid="uid://dtwj1wjmxf1es"]
 
 [ext_resource type="Script" uid="uid://o3u6lxfpl6rs" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://1x0gd3gget8j" path="res://Main Character/MechaCat_Firing.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://c4646d2vy6gng" path="res://Main Character/MechaCat_Flying_Idle.png" id="2_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://qhffu7l65n5k" path="res://Main Character/MechaCat_SlashAttack.png" id="4_vgqql"]
+[ext_resource type="AudioStream" uid="uid://btr7v1jrju8di" path="res://Sound/laserShoot.wav" id="5_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
 atlas = ExtResource("2_cvnsp")
@@ -215,3 +216,6 @@ shape = SubResource("CircleShape2D_i3pqv")
 
 [node name="Rotator" type="Node2D" parent="."]
 position = Vector2(25, -19)
+
+[node name="ShootSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_fkybt")

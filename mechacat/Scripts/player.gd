@@ -38,3 +38,4 @@ func shoot():
 	get_parent().add_child(b)
 	b.position = $Rotator.global_position
 	b.rotation = $Rotator.global_rotation
+	$ShootSFX.play()
