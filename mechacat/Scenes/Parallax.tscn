@@ -27,6 +27,8 @@ func _process(delta: float) -> void:
 [node name="Parallax" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
 script = SubResource("GDScript_53x5a")
 
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
