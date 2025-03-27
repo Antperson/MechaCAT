@@ -46,6 +46,7 @@ func dmg_taken():
 		get_parent().add_child(e)
 		print("Tragic")
 		death_timer.start()
+		$AnimatedSprite2D.visible = false;
 		$Area2D.queue_free()
 		
 func _on_death_timer_timeout() -> void:

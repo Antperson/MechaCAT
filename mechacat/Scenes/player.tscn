@@ -253,12 +253,16 @@ shape = SubResource("CircleShape2D_fkybt")
 debug_color = Color(0.839445, 0.314784, 0.570753, 0.42)
 
 [node name="SlashArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlashArea"]
 position = Vector2(31.5, -22.875)
 shape = SubResource("RectangleShape2D_x3wgy")
+disabled = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="SlashArea" to="." method="_on_slash_area_area_entered"]
