@@ -30,7 +30,7 @@ func position_to_next_wave():
 func prepare_spawn(type, multiplier, mob_spawns):
 	var mob_amount = float(current_wave) * multiplier
 	var mob_wait_time: float = 2.0
-	print("mob_amount: ", mob_amount)
+	#print("mob_amount: ", mob_amount)
 	var mob_spawn_rounds = mob_amount/mob_spawns
 	spawn_type(type, mob_spawn_rounds, mob_wait_time)
 
@@ -39,15 +39,14 @@ func spawn_type(type, mob_spawn_rounds, mob_wait_time):
 		var fish_spawn1 = $FishSpawn1
 		var fish_spawn2 = $FishSpawn2
 		if mob_spawn_rounds >= 1:
-			for i in mob_spawn_rounds:
-				var fish1 = fish_scene.instantiate()
-				fish1.global_position = fish_spawn1.global_position
-				var fish2 = fish_scene.instantiate()
-				fish2.global_position = fish_spawn2.global_position
-				add_child(fish1)
-				add_child(fish2)
-				mob_spawn_rounds -= 1
-				await get_tree().create_timer(mob_wait_time).timeout
+			var fish1 = fish_scene.instantiate()
+			fish1.global_position = fish_spawn1.global_position
+			var fish2 = fish_scene.instantiate()
+			fish2.global_position = fish_spawn2.global_position
+			add_child(fish1)
+			add_child(fish2)
+			mob_spawn_rounds -= 1
+			await get_tree().create_timer(mob_wait_time).timeout
 		"""elif type == "birds":
 			var bird_spawn1 = $SeagullSpawn1
 			var bird_spawn2 = $SeagullSpawn2
