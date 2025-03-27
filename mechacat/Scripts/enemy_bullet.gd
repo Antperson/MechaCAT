@@ -14,7 +14,8 @@ func _process(delta: float) -> void:
 	offset+=delta
 	if count % 50 == 0 and ran != 0:
 		amplitude*= ran
-	position += transform.x * speed * delta + transform.y * sin(offset * frequency) * amplitude
+		count = count % 50
+	position += transform.x * speed * delta + transform.y * sin(offset * frequency) * amplitude * -1
 
 
 

@@ -1,7 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2mvm7uhuud56"]
+[gd_scene load_steps=12 format=3 uid="uid://c2mvm7uhuud56"]
 
+[ext_resource type="Script" uid="uid://c3w2aaljhd1yg" path="res://Levels/main.gd" id="1_lwy2l"]
 [ext_resource type="PackedScene" uid="uid://dtwj1wjmxf1es" path="res://Scenes/player.tscn" id="1_oj8hd"]
+[ext_resource type="PackedScene" uid="uid://bukk866yhl1nm" path="res://Scenes/Goldfish_base.tscn" id="2_7pswh"]
 [ext_resource type="PackedScene" uid="uid://bdpvorprv8hqq" path="res://Scenes/Parallax.tscn" id="2_gnif3"]
+[ext_resource type="PackedScene" uid="uid://cb7x0dtinj137" path="res://Scenes/Seagull_base.tscn" id="3_34bfm"]
 
 [sub_resource type="GDScript" id="GDScript_gnif3"]
 script/source = "extends Node2D
@@ -35,6 +38,9 @@ distance = -779.0
 distance = 137.0
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_lwy2l")
+fish_scene = ExtResource("2_7pswh")
+Seagull_base = ExtResource("3_34bfm")
 
 [node name="Parallax" parent="." instance=ExtResource("2_gnif3")]
 position = Vector2(-8, -3)
@@ -77,3 +83,12 @@ position = Vector2(762, 86)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right_bound"]
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_7pswh")
+
+[node name="FishSpawn1" type="Node2D" parent="."]
+position = Vector2(577, 64)
+
+[node name="FishSpawn2" type="Node2D" parent="."]
+position = Vector2(575, 179)
+
+[node name="SeagullSpawn1" type="Node2D" parent="."]
+position = Vector2(676, 290)

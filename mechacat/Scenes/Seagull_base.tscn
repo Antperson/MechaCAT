@@ -175,7 +175,7 @@ position = Vector2(-1, -37)
 sprite_frames = SubResource("SpriteFrames_c1gwg")
 animation = &"Shoot"
 autoplay = "Idle"
-frame_progress = 0.555272
+frame_progress = 0.758854
 
 [node name="ShootTimer" type="Timer" parent="."]
 
