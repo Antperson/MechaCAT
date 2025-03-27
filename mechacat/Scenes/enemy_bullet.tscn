@@ -86,6 +86,7 @@ animations = [{
 [node name="EnemyBullet" type="Node2D"]
 script = ExtResource("1_54jiv")
 frequency = 2
+amplitude = 1.645
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 3
