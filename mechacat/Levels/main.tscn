@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c2mvm7uhuud56"]
+[gd_scene load_steps=20 format=3 uid="uid://c2mvm7uhuud56"]
 
 [ext_resource type="Script" uid="uid://c3w2aaljhd1yg" path="res://Levels/main.gd" id="1_lwy2l"]
 [ext_resource type="PackedScene" uid="uid://dtwj1wjmxf1es" path="res://Scenes/player.tscn" id="1_oj8hd"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bdpvorprv8hqq" path="res://Scenes/Parallax.tscn" id="2_gnif3"]
 [ext_resource type="PackedScene" uid="uid://cb7x0dtinj137" path="res://Scenes/Seagull_base.tscn" id="3_34bfm"]
 [ext_resource type="Texture2D" uid="uid://bciyh23o2c88m" path="res://Main Character/Heath Bar_128x160.png" id="6_34bfm"]
+[ext_resource type="AudioStream" uid="uid://d0o88708lxjmp" path="res://Sound/8-bit-music-on-245249.mp3" id="7_ovrsl"]
 
 [sub_resource type="GDScript" id="GDScript_gnif3"]
 script/source = "extends Node2D
@@ -143,3 +144,8 @@ position = Vector2(37, 198)
 [node name="Health" type="AnimatedSprite2D" parent="."]
 position = Vector2(76, 23)
 sprite_frames = SubResource("SpriteFrames_hilkn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ovrsl")
+volume_db = -2.0
+autoplay = true
