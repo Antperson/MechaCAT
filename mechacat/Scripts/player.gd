@@ -3,9 +3,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 var isSlashing = false
 var isShooting = false
-var hp = 3
+var hp = 4
 @onready var death_timer: Timer = $death_timer
-
 const bullet = preload("res://Scenes/bullet.tscn")
 const exp = preload("res://Scenes/Explosion.tscn")
 
@@ -36,6 +35,7 @@ func shoot():
 
 func dmg_taken():
 	$HurtSFX.play()
+	$"../Health".frame +=1
 	hp -= 1
 	if hp <= 0:
 		var e = exp.instantiate()

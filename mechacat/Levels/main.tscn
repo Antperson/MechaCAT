@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2mvm7uhuud56"]
+[gd_scene load_steps=19 format=3 uid="uid://c2mvm7uhuud56"]
 
 [ext_resource type="Script" uid="uid://c3w2aaljhd1yg" path="res://Levels/main.gd" id="1_lwy2l"]
 [ext_resource type="PackedScene" uid="uid://dtwj1wjmxf1es" path="res://Scenes/player.tscn" id="1_oj8hd"]
 [ext_resource type="PackedScene" uid="uid://bukk866yhl1nm" path="res://Scenes/Goldfish_base.tscn" id="2_7pswh"]
 [ext_resource type="PackedScene" uid="uid://bdpvorprv8hqq" path="res://Scenes/Parallax.tscn" id="2_gnif3"]
 [ext_resource type="PackedScene" uid="uid://cb7x0dtinj137" path="res://Scenes/Seagull_base.tscn" id="3_34bfm"]
+[ext_resource type="Texture2D" uid="uid://bciyh23o2c88m" path="res://Main Character/Heath Bar_128x160.png" id="6_34bfm"]
 
 [sub_resource type="GDScript" id="GDScript_gnif3"]
 script/source = "extends Node2D
@@ -36,6 +37,49 @@ distance = -779.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7pswh"]
 distance = 137.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovrsl"]
+atlas = ExtResource("6_34bfm")
+region = Rect2(0, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbaan"]
+atlas = ExtResource("6_34bfm")
+region = Rect2(0, 32, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he5fp"]
+atlas = ExtResource("6_34bfm")
+region = Rect2(0, 64, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u05pv"]
+atlas = ExtResource("6_34bfm")
+region = Rect2(0, 96, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mykqc"]
+atlas = ExtResource("6_34bfm")
+region = Rect2(0, 128, 128, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_34bfm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovrsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbaan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he5fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u05pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mykqc")
+}],
+"loop": false,
+"name": &"Health",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_lwy2l")
@@ -94,7 +138,9 @@ position = Vector2(382, 115)
 position = Vector2(364, 272)
 
 [node name="Player" parent="." instance=ExtResource("1_oj8hd")]
-position = Vector2(37, 198)
+position = Vector2(37, 197)
 
-[node name="Seagull_base" parent="." instance=ExtResource("3_34bfm")]
-position = Vector2(557, 308)
+[node name="Health" type="AnimatedSprite2D" parent="."]
+position = Vector2(75, 22)
+sprite_frames = SubResource("SpriteFrames_34bfm")
+animation = &"Health"
