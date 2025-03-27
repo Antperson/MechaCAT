@@ -82,10 +82,10 @@ rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_7pswh")
 
 [node name="FishSpawn1" type="Node2D" parent="."]
-position = Vector2(577, 64)
+position = Vector2(673, 140)
 
 [node name="FishSpawn2" type="Node2D" parent="."]
-position = Vector2(575, 179)
+position = Vector2(674, 253)
 
 [node name="SeagullSpawn1" type="Node2D" parent="."]
 position = Vector2(382, 115)

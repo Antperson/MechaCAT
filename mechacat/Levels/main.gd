@@ -3,7 +3,6 @@ extends Node2D
 var current_wave: int = 0
 @export var fish_scene:PackedScene
 @export var Seagull_base:PackedScene
-const speed = 30
 
 var starting_nodes: int
 var current_nodes: int
@@ -24,7 +23,7 @@ func position_to_next_wave():
 		wave_spawn_ended = false
 		current_wave += 1
 		Global.current_wave = current_wave
-		prepare_spawn("fish", 4.0, 2.0) #type, multiplier, spawns
+		prepare_spawn("fish", 1.0, 1.0) #type, multiplier, spawns
 		prepare_spawn("birds", 4.0, 2.0)
 		print(current_wave)
 

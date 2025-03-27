@@ -3,14 +3,13 @@ const expl = preload("res://Scenes/Explosion.tscn")
 const bullet_scene = preload("res://Scenes/enemy_bullet.tscn")
 @onready var shoot_timer: Timer = $ShootTimer
 @onready var rotator: Node2D = $Rotator
-
+@export var speed: int
 
 const rotate_speed = 0
 const shoot_timer_wait_time = 1
 const spawn_point_count = 1
 const radius = 50
 @export var hp = 5
-
 func _ready() -> void:
 	var step = 2 * PI / spawn_point_count
 	for i in range(spawn_point_count):
@@ -27,6 +26,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var new_rotation = rotator.rotation_degrees + rotate_speed * delta
 	rotator.rotation_degrees = fmod(new_rotation, 360)
+	self.position.x += speed * delta
 
 func _on_shoot_timer_timeout() -> void:
 	for s in rotator.get_children():
