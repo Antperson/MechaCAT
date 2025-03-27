@@ -227,8 +227,8 @@ frequency = 2
 amplitude = 1.645
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 modulate = Color(1.5, 1.5, 1.5, 1)
