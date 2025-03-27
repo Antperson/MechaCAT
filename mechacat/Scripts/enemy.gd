@@ -9,7 +9,7 @@ const rotate_speed = 0
 const shoot_timer_wait_time = 1
 const spawn_point_count = 1
 const radius = 50
-var ran: int
+var ran
 @export var hp = 5
 func _ready() -> void:
 	var step = 2 * PI / spawn_point_count
@@ -23,20 +23,26 @@ func _ready() -> void:
 	shoot_timer.wait_time = shoot_timer_wait_time
 	shoot_timer.start()
 	$AnimatedSprite2D.play("attack")
-	ran = randi_range(1,3)
-	
+	ran = choose([1,2,3])
+
+func choose(array):
+	array.shuffle()
+	return array.front()
 
 func _process(delta: float) -> void:
 	var ran = randi_range(1,3)
 	var new_rotation = rotator.rotation_degrees + rotate_speed * delta
 	rotator.rotation_degrees = fmod(new_rotation, 360)
+	move(delta)
+
+func move(delta):
 	offset+=delta
 	if ran == 1:
 		position += transform.x * speed * delta
 	elif ran == 2:
-		position += transform.x * speed * delta + transform.y*sin(offset)*1.5
+		position += transform.x * speed * delta + transform.y*sin(offset)
 	else:
-		position += transform.x * speed * delta + transform.y*sin(offset)*1.5*-1
+		position += transform.x * speed * delta + transform.y*sin(offset)*-1
 
 func _on_shoot_timer_timeout() -> void:
 	for s in rotator.get_children():
