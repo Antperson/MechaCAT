@@ -3,7 +3,7 @@ extends Node2D
 var current_wave: int = 0
 @export var fish_scene:PackedScene
 @export var Seagull_base:PackedScene
-
+const speed = 30
 
 var starting_nodes: int
 var current_nodes: int
@@ -11,7 +11,7 @@ var wave_spawn_ended
 
 
 func _ready() -> void:
-	current_wave = 2
+	current_wave = 0
 	Global.current_wave = current_wave
 	starting_nodes = get_child_count()
 	current_nodes = get_child_count()
@@ -21,6 +21,7 @@ func position_to_next_wave():
 	if current_nodes == starting_nodes:
 		if current_wave != 0:
 			Global.moving_to_next_wave = true
+		wave_spawn_ended = false
 		current_wave += 1
 		Global.current_wave = current_wave
 		prepare_spawn("fish", 4.0, 2.0) #type, multiplier, spawns
@@ -48,7 +49,7 @@ func spawn_type(type, mob_spawn_rounds, mob_wait_time):
 				add_child(fish2)
 				mob_spawn_rounds -= 1
 				await get_tree().create_timer(mob_wait_time).timeout
-		elif type == "birds":
+		"""elif type == "birds":
 			var bird_spawn1 = $SeagullSpawn1
 			var bird_spawn2 = $SeagullSpawn2
 			for i in mob_spawn_rounds:
@@ -59,6 +60,10 @@ func spawn_type(type, mob_spawn_rounds, mob_wait_time):
 				add_child(bird1)
 				add_child(bird2)
 				mob_spawn_rounds -= 1
-				await get_tree().create_timer(mob_wait_time).timeout
+				await get_tree().create_timer(mob_wait_time).timeout"""
 		wave_spawn_ended = true
 		
+func _process(delta: float) -> void:
+	current_nodes = get_child_count()
+	if wave_spawn_ended:
+		position_to_next_wave()

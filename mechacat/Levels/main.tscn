@@ -97,4 +97,4 @@ position = Vector2(364, 272)
 position = Vector2(37, 198)
 
 [node name="Seagull_base" parent="." instance=ExtResource("3_34bfm")]
-position = Vector2(245, 213)
+position = Vector2(557, 308)

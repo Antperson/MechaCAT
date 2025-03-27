@@ -238,7 +238,7 @@ stream = ExtResource("5_fkybt")
 stream = ExtResource("6_x3wgy")
 
 [node name="death_timer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 2.0
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
