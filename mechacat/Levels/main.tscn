@@ -36,39 +36,43 @@ distance = 137.0
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_oj8hd")]
-position = Vector2(-461, 38)
-
 [node name="Parallax" parent="." instance=ExtResource("2_gnif3")]
-position = Vector2(-150, -3)
+position = Vector2(-8, -3)
 scale = Vector2(2, 2)
 script = SubResource("GDScript_gnif3")
+
+[node name="Player" parent="." instance=ExtResource("1_oj8hd")]
+position = Vector2(311, 124)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gnif3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-460, 90)
+position = Vector2(314, 176)
 zoom = Vector2(1.8, 1.8)
 
 [node name="lower_bound" type="StaticBody2D" parent="."]
+position = Vector2(772, 78)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lower_bound"]
 shape = SubResource("WorldBoundaryShape2D_gnif3")
 
 [node name="upper_bound" type="StaticBody2D" parent="."]
+position = Vector2(772, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="upper_bound"]
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_lwy2l")
 
 [node name="left_bound" type="StaticBody2D" parent="."]
+position = Vector2(780, 85)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="left_bound"]
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_nj2yk")
 
 [node name="right_bound" type="StaticBody2D" parent="."]
+position = Vector2(762, 86)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right_bound"]
 rotation = 4.71239

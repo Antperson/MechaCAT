@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdpvorprv8hqq"]
+[gd_scene load_steps=7 format=3 uid="uid://bdpvorprv8hqq"]
 
 [ext_resource type="Texture2D" uid="uid://b2ikdt2xxopcq" path="res://Background/Stage1_Sky.png" id="1_53x5a"]
-[ext_resource type="Script" uid="uid://i6jbdubmwrbr" path="res://Scenes/parallax.gd" id="1_kfw77"]
 [ext_resource type="Texture2D" uid="uid://dobgqkga8lsr6" path="res://Background/Stage1_Clouds.png" id="2_kfw77"]
 [ext_resource type="Texture2D" uid="uid://d1kahdr17ea12" path="res://Background/Stage1_Moon.png" id="3_sj034"]
 [ext_resource type="Texture2D" uid="uid://ca6qene1vkfi4" path="res://Background/Stage1_City.png" id="4_ia12x"]
@@ -10,66 +9,61 @@
 
 [node name="Parallax" type="Node2D"]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 0, 0)
+[node name="Sky" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(540, 0)
+autoscroll = Vector2(-10, 0)
+repeat_times = 3
 
-[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.3, 1)
-motion_mirroring = Vector2(540, 0)
-script = ExtResource("1_kfw77")
-speed = -50
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
-position = Vector2(0, -1)
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
 texture = ExtResource("1_53x5a")
+centered = false
 
-[node name="Moon" type="ParallaxLayer" parent="ParallaxBackground"]
-modulate = Color(1.3, 1.3, 1.3, 1)
-motion_scale = Vector2(0.1, 1)
-motion_mirroring = Vector2(540, 0)
-script = ExtResource("1_kfw77")
-speed = -20
+[node name="Moon" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 1)
+repeat_size = Vector2(540, 0)
+autoscroll = Vector2(-10, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Moon"]
-position = Vector2(0, -1)
+[node name="Sprite2D" type="Sprite2D" parent="Moon"]
 texture = ExtResource("3_sj034")
+centered = false
 
-[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.5, 1)
-motion_mirroring = Vector2(540, 0)
-script = ExtResource("1_kfw77")
-speed = -40
+[node name="Clouds" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(540, 0)
+autoscroll = Vector2(-35, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Clouds"]
-position = Vector2(0, -1)
+[node name="Sprite2D" type="Sprite2D" parent="Clouds"]
 texture = ExtResource("2_kfw77")
+centered = false
 
-[node name="City" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.8, 1)
-motion_mirroring = Vector2(540, 0)
-script = ExtResource("1_kfw77")
-speed = -30
+[node name="City" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.7, 1)
+repeat_size = Vector2(540, 0)
+autoscroll = Vector2(-20, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/City"]
-position = Vector2(0, -1)
+[node name="Sprite2D" type="Sprite2D" parent="City"]
 texture = ExtResource("4_ia12x")
+centered = false
 
-[node name="Water2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(540, 0)
-script = ExtResource("1_kfw77")
-speed = -50
+[node name="Light" type="Parallax2D" parent="."]
+repeat_size = Vector2(540, 0)
+autoscroll = Vector2(-55, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Water2"]
-position = Vector2(0, -1)
+[node name="Sprite2D" type="Sprite2D" parent="Light"]
 texture = ExtResource("5_1na8k")
+centered = false
 
-[node name="Water" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(1.5, 1)
-motion_mirroring = Vector2(540, 0)
-script = ExtResource("1_kfw77")
-speed = -60
+[node name="Dark" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.2, 1)
+repeat_size = Vector2(540, 0)
+autoscroll = Vector2(-80, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Water"]
-position = Vector2(0, -1)
+[node name="Sprite2D" type="Sprite2D" parent="Dark"]
 texture = ExtResource("6_nam1v")
+centered = false
