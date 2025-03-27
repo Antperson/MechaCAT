@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vokn00ok13es"
-path="res://.godot/imported/Boss1_Idle_74x74..png-f463bed068722d5917acbd37d2c1f9c4.ctex"
+uid="uid://bbjt108i3yhxu"
+path="res://.godot/imported/Unknown_Idle_180x180.png-523fce72433a9d8822fd9fc5f86a4869.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/Boss1_Idle_74x74..png"
-dest_files=["res://.godot/imported/Boss1_Idle_74x74..png-f463bed068722d5917acbd37d2c1f9c4.ctex"]
+source_file="res://Enemies/Unknown/Unknown_Idle_180x180.png"
+dest_files=["res://.godot/imported/Unknown_Idle_180x180.png-523fce72433a9d8822fd9fc5f86a4869.ctex"]
 
 [params]
 

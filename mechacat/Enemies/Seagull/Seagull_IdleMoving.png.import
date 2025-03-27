@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pnvoy0nhu2es"
-path="res://.godot/imported/Boss1_FlareAttack_74x74..png-335cdb9eaec1c7712b1522c054f5a30d.ctex"
+uid="uid://dd3xro3w8mw6i"
+path="res://.godot/imported/Seagull_IdleMoving.png-13a5c81b149e058a4e10b771db46fd09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/Boss1_FlareAttack_74x74..png"
-dest_files=["res://.godot/imported/Boss1_FlareAttack_74x74..png-335cdb9eaec1c7712b1522c054f5a30d.ctex"]
+source_file="res://Enemies/Seagull/Seagull_IdleMoving.png"
+dest_files=["res://.godot/imported/Seagull_IdleMoving.png-13a5c81b149e058a4e10b771db46fd09.ctex"]
 
 [params]
 

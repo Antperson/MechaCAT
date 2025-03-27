@@ -1,9 +1,9 @@
 [gd_scene load_steps=46 format=3 uid="uid://bukk866yhl1nm"]
 
 [ext_resource type="Script" uid="uid://2w2id5bawy13" path="res://Scripts/enemy.gd" id="1_1f0kj"]
-[ext_resource type="Texture2D" uid="uid://pnvoy0nhu2es" path="res://Enemies/Boss1_FlareAttack_74x74..png" id="2_afpow"]
-[ext_resource type="Texture2D" uid="uid://vokn00ok13es" path="res://Enemies/Boss1_Idle_74x74..png" id="3_287tu"]
-[ext_resource type="Texture2D" uid="uid://bbltaonac5qdt" path="res://Enemies/Boss1_BasicShoot.png" id="4_287tu"]
+[ext_resource type="Texture2D" uid="uid://pnvoy0nhu2es" path="res://Enemies/Goldfish/Boss1_FlareAttack_74x74..png" id="2_afpow"]
+[ext_resource type="Texture2D" uid="uid://vokn00ok13es" path="res://Enemies/Goldfish/Boss1_Idle_74x74..png" id="3_287tu"]
+[ext_resource type="Texture2D" uid="uid://bbltaonac5qdt" path="res://Enemies/Goldfish/Boss1_BasicShoot.png" id="4_287tu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0830c"]
 atlas = ExtResource("2_afpow")

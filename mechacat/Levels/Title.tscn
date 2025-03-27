@@ -29,6 +29,7 @@ offset_bottom = 144.0
 text = "Start"
 
 [node name="Quit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 134.0
 offset_top = 198.0
 offset_right = 176.0

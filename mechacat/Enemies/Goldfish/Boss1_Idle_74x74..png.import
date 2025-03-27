@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnmwug8kw68kx"
-path="res://.godot/imported/Bubble_32x32.png-76e20c0332a075ebd2b20de8455a6557.ctex"
+uid="uid://vokn00ok13es"
+path="res://.godot/imported/Boss1_Idle_74x74..png-a62d6e40070933991e380a07f9fa9a1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/Bubble_32x32.png"
-dest_files=["res://.godot/imported/Bubble_32x32.png-76e20c0332a075ebd2b20de8455a6557.ctex"]
+source_file="res://Enemies/Goldfish/Boss1_Idle_74x74..png"
+dest_files=["res://.godot/imported/Boss1_Idle_74x74..png-a62d6e40070933991e380a07f9fa9a1d.ctex"]
 
 [params]
 

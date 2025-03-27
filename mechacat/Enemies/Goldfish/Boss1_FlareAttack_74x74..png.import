@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbwuw4sin55dk"
-path="res://.godot/imported/Enemy_Minion.png-e8694f0fddfa8dd2836fa3369a8ae3b8.ctex"
+uid="uid://pnvoy0nhu2es"
+path="res://.godot/imported/Boss1_FlareAttack_74x74..png-423b874c24476c3c87a894935a7ab8fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/Enemy_Minion.png"
-dest_files=["res://.godot/imported/Enemy_Minion.png-e8694f0fddfa8dd2836fa3369a8ae3b8.ctex"]
+source_file="res://Enemies/Goldfish/Boss1_FlareAttack_74x74..png"
+dest_files=["res://.godot/imported/Boss1_FlareAttack_74x74..png-423b874c24476c3c87a894935a7ab8fb.ctex"]
 
 [params]
 
