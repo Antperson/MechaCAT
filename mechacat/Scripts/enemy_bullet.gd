@@ -3,12 +3,17 @@ extends Node2D
 @export var speed: int = 100
 @export var offset: float = 0.0
 @export var frequency: int = 0
-@export var amplitude: float = 0.0
+@export var amplitude: float = 1.5
 
 const exp = preload("res://Scenes/Explosion.tscn")
+var count = 0
 
 func _process(delta: float) -> void:
-	offset += delta
+	var ran = randi_range(-1,1)
+	count+=1
+	offset+=delta
+	if count % 50 == 0 and ran != 0:
+		amplitude*= ran
 	position += transform.x * speed * delta + transform.y * sin(offset * frequency) * amplitude
 
 
