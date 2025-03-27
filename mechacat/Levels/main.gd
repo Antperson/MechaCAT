@@ -11,7 +11,7 @@ var wave_spawn_ended
 
 
 func _ready() -> void:
-	current_wave = 0
+	current_wave = 2
 	Global.current_wave = current_wave
 	starting_nodes = get_child_count()
 	current_nodes = get_child_count()
@@ -24,7 +24,7 @@ func position_to_next_wave():
 		current_wave += 1
 		Global.current_wave = current_wave
 		prepare_spawn("fish", 4.0, 2.0) #type, multiplier, spawns
-		prepare_spawn("birds", 1.5, 1.0)
+		prepare_spawn("birds", 4.0, 2.0)
 		print(current_wave)
 
 func prepare_spawn(type, multiplier, mob_spawns):
@@ -48,6 +48,17 @@ func spawn_type(type, mob_spawn_rounds, mob_wait_time):
 				add_child(fish2)
 				mob_spawn_rounds -= 1
 				await get_tree().create_timer(mob_wait_time).timeout
+		elif type == "birds":
+			var bird_spawn1 = $SeagullSpawn1
+			var bird_spawn2 = $SeagullSpawn2
+			for i in mob_spawn_rounds:
+				var bird1 = Seagull_base.instantiate()
+				bird1.global_position = bird_spawn1.global_position
+				var bird2 = Seagull_base.instantiate()
+				bird2.global_position = bird_spawn2.global_position
+				add_child(bird1)
+				add_child(bird2)
+				mob_spawn_rounds -= 1
+				await get_tree().create_timer(mob_wait_time).timeout
 		wave_spawn_ended = true
-	
-	
+		

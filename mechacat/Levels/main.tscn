@@ -47,9 +47,6 @@ position = Vector2(-8, -3)
 scale = Vector2(2, 2)
 script = SubResource("GDScript_gnif3")
 
-[node name="Player" parent="." instance=ExtResource("1_oj8hd")]
-position = Vector2(37, 198)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gnif3")
 
@@ -91,4 +88,10 @@ position = Vector2(577, 64)
 position = Vector2(575, 179)
 
 [node name="SeagullSpawn1" type="Node2D" parent="."]
-position = Vector2(676, 290)
+position = Vector2(382, 115)
+
+[node name="SeagullSpawn2" type="Node2D" parent="."]
+position = Vector2(364, 272)
+
+[node name="Player" parent="." instance=ExtResource("1_oj8hd")]
+position = Vector2(37, 198)

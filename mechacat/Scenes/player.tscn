@@ -234,6 +234,7 @@ position = Vector2(25, -19)
 stream = ExtResource("5_fkybt")
 
 [node name="death_timer" type="Timer" parent="."]
+wait_time = 6.0
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

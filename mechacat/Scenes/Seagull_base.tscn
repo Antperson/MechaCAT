@@ -160,8 +160,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_pcmla")
 }],
 "loop": true,
-"name": &"Shoot",
-"speed": 14.0
+"name": &"attack",
+"speed": 20.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mldi7"]
@@ -173,14 +173,14 @@ script = ExtResource("1_ar2yx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -37)
 sprite_frames = SubResource("SpriteFrames_c1gwg")
-animation = &"Shoot"
+animation = &"attack"
 autoplay = "Idle"
-frame_progress = 0.758854
+frame_progress = 0.586433
 
 [node name="ShootTimer" type="Timer" parent="."]
 
 [node name="Rotator" type="Node2D" parent="."]
-position = Vector2(-8, -18)
+position = Vector2(15, -18)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

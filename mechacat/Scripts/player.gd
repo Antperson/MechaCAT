@@ -39,6 +39,7 @@ func dmg_taken():
 	if hp <= 0:
 		print("Tragic")
 		death_timer.start()
+		$Area2D.queue_free()
 		
 func _on_death_timer_timeout() -> void:
 	get_tree().reload_current_scene()
