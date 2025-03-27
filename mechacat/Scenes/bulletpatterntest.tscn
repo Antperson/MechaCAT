@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dot1aesh27ywy"]
+[gd_scene load_steps=4 format=3 uid="uid://dot1aesh27ywy"]
 
 [ext_resource type="PackedScene" uid="uid://dtwj1wjmxf1es" path="res://Scenes/player.tscn" id="1_undjn"]
 [ext_resource type="PackedScene" uid="uid://bukk866yhl1nm" path="res://Scenes/Goldfish_base.tscn" id="2_j62k0"]
+[ext_resource type="PackedScene" uid="uid://cqa1ph7pbbs2" path="res://Scenes/spawner.tscn" id="3_j62k0"]
 
 [node name="bulletpatterntest" type="Node2D"]
 
@@ -11,5 +12,5 @@ position = Vector2(32, 77)
 [node name="Enemy" parent="." instance=ExtResource("2_j62k0")]
 position = Vector2(977, 342)
 
-[node name="Enemy2" parent="." instance=ExtResource("2_j62k0")]
-position = Vector2(661, 341)
+[node name="Spawner" parent="." instance=ExtResource("3_j62k0")]
+position = Vector2(588, 296)
