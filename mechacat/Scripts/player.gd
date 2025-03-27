@@ -17,10 +17,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func _process(delta):
-	if Input.is_action_just_pressed("slash") && isShooting == false:
+	"""if Input.is_action_just_pressed("slash") && isShooting == false:
 		isSlashing == true
 		$AnimatedSprite2D.play("Slash")
-		$SlashArea/CollisionShape2D.disabled = false;
+		$SlashArea/CollisionShape2D.disabled = false;"""
 	if Input.is_action_just_pressed("shoot")&& isSlashing == false:
 		shoot()
 		isShooting == true
@@ -44,7 +44,6 @@ func dmg_taken():
 		e.position = global_position
 		e.rotation = global_rotation
 		get_parent().add_child(e)
-		print("Tragic")
 		death_timer.start()
 		$AnimatedSprite2D.visible = false;
 		$Area2D.queue_free()
