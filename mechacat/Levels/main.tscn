@@ -42,7 +42,7 @@ scale = Vector2(2, 2)
 script = SubResource("GDScript_gnif3")
 
 [node name="Player" parent="." instance=ExtResource("1_oj8hd")]
-position = Vector2(311, 124)
+position = Vector2(37, 198)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gnif3")

@@ -20,6 +20,7 @@ texture = ExtResource("1_53x5a")
 centered = false
 
 [node name="Moon" type="Parallax2D" parent="."]
+modulate = Color(1.4, 1.4, 1.4, 1)
 scroll_scale = Vector2(0.3, 1)
 repeat_size = Vector2(540, 0)
 autoscroll = Vector2(-10, 0)

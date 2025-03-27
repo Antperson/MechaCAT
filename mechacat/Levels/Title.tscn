@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://qo5emlrbu2tv"]
+
+[ext_resource type="Script" uid="uid://b2xg82cdjvq0" path="res://Scripts/title.gd" id="1_u4kg6"]
+[ext_resource type="AudioStream" uid="uid://duwpvhttyunj1" path="res://Sound/blipSelect.wav" id="2_2jhio"]
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u4kg6")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 136.0
+offset_right = 141.0
+offset_bottom = 144.0
+text = "Start"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 134.0
+offset_top = 198.0
+offset_right = 176.0
+offset_bottom = 229.0
+text = "Quit
+"
+
+[node name="Select" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_2jhio")
+
+[connection signal="mouse_entered" from="Start" to="." method="_on_start_mouse_entered"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
