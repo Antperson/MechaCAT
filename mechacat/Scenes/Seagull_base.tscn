@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://cb7x0dtinj137"]
+[gd_scene load_steps=28 format=3 uid="uid://cb7x0dtinj137"]
 
 [ext_resource type="Script" uid="uid://2w2id5bawy13" path="res://Scripts/enemy.gd" id="1_ar2yx"]
 [ext_resource type="Texture2D" uid="uid://dd3xro3w8mw6i" path="res://Enemies/Seagull/Seagull_IdleMoving.png" id="2_oh3tw"]
 [ext_resource type="Texture2D" uid="uid://bde3gc5a3x72x" path="res://Enemies/Seagull/Seagull_Shoot.png" id="3_bb2lo"]
+[ext_resource type="AudioStream" uid="uid://dkaknl3e5cycq" path="res://Sound/hitHurt.wav" id="4_ar2yx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bb2lo"]
 atlas = ExtResource("2_oh3tw")
@@ -167,15 +168,15 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mldi7"]
 radius = 15.0
 
-[node name="Goldfish_base" type="Node2D"]
+[node name="Seagull_base" type="Node2D"]
 script = ExtResource("1_ar2yx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -37)
 sprite_frames = SubResource("SpriteFrames_c1gwg")
-animation = &"attack"
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.586433
+frame_progress = 0.0605975
 
 [node name="ShootTimer" type="Timer" parent="."]
 
@@ -189,6 +190,9 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(5, -35)
 shape = SubResource("CapsuleShape2D_mldi7")
+
+[node name="HurtSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ar2yx")
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]

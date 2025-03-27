@@ -37,8 +37,8 @@ gravity = Vector3(0, 0, 0)
 linear_accel_curve = SubResource("CurveTexture_wcvtd")
 radial_accel_min = -2.23517e-06
 radial_accel_max = 30.0
-scale_min = 30.0
-scale_max = 50.0
+scale_min = 10.0
+scale_max = 20.0
 scale_curve = SubResource("CurveTexture_rhy4c")
 color_ramp = SubResource("GradientTexture1D_mbc3v")
 
@@ -113,7 +113,7 @@ script = ExtResource("1_ix64a")
 [node name="Core" type="GPUParticles2D" parent="."]
 modulate = Color(2, 1, 1, 1)
 emitting = false
-amount = 25
+amount = 10
 lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
@@ -123,7 +123,7 @@ process_material = SubResource("ParticleProcessMaterial_rsf77")
 
 [node name="Smoke" type="GPUParticles2D" parent="."]
 emitting = false
-amount = 25
+amount = 10
 lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
@@ -134,7 +134,7 @@ process_material = SubResource("ParticleProcessMaterial_mma61")
 [node name="Fire" type="GPUParticles2D" parent="."]
 modulate = Color(2, 1, 1, 1)
 emitting = false
-amount = 30
+amount = 15
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0

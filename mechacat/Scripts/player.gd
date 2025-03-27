@@ -35,8 +35,14 @@ func shoot():
 	$ShootSFX.play()
 
 func dmg_taken():
+	$HurtSFX.play()
 	hp -= 1
 	if hp <= 0:
+		var e = exp.instantiate()
+		e.position = position
+		e.position = global_position
+		e.rotation = global_rotation
+		get_parent().add_child(e)
 		print("Tragic")
 		death_timer.start()
 		$Area2D.queue_free()
@@ -49,11 +55,6 @@ func _on_death_timer_timeout() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	dmg_taken()
-	var e = exp.instantiate()
-	e.position = position
-	e.position = global_position
-	e.rotation = global_rotation
-	get_parent().add_child(e)
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:

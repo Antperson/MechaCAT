@@ -1,5 +1,5 @@
 extends Node2D
-
+const expl = preload("res://Scenes/Explosion.tscn")
 const bullet_scene = preload("res://Scenes/enemy_bullet.tscn")
 @onready var shoot_timer: Timer = $ShootTimer
 @onready var rotator: Node2D = $Rotator
@@ -36,8 +36,14 @@ func _on_shoot_timer_timeout() -> void:
 		bullet.rotation = s.global_rotation
 
 func taking_dmg():
+	$HurtSFX.play()
 	hp -= 1
 	if hp<0:
+		var e = expl.instantiate()
+		e.position = position
+		e.position = global_position
+		e.rotation = global_rotation
+		get_parent().add_child(e)
 		queue_free()
 
 func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
