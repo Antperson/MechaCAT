@@ -25,7 +25,7 @@ func position_to_next_wave():
 		Global.current_wave = current_wave
 		prepare_spawn("fish", 1.0, 1.0) #type, multiplier, spawns
 		#prepare_spawn("birds", 4.0, 2.0)
-		print(current_wave)
+		#print(current_wave)
 
 func prepare_spawn(type, multiplier, mob_spawns):
 	var mob_amount = float(current_wave) * multiplier
@@ -60,6 +60,7 @@ func spawn_type(type, mob_spawn_rounds, mob_wait_time):
 				mob_spawn_rounds -= 1
 				await get_tree().create_timer(mob_wait_time).timeout"""
 		wave_spawn_ended = true
+		mob_wait_time -= 0.2
 		
 func _process(delta: float) -> void:
 	current_nodes = get_child_count()
