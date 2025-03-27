@@ -24,7 +24,7 @@ func position_to_next_wave():
 		current_wave += 1
 		Global.current_wave = current_wave
 		prepare_spawn("fish", 1.0, 1.0) #type, multiplier, spawns
-		prepare_spawn("birds", 4.0, 2.0)
+		#prepare_spawn("birds", 4.0, 2.0)
 		print(current_wave)
 
 func prepare_spawn(type, multiplier, mob_spawns):
