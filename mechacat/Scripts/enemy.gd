@@ -40,9 +40,9 @@ func move(delta):
 	if ran == 1:
 		position += transform.x * speed * delta
 	elif ran == 2:
-		position += transform.x * speed * delta + transform.y*sin(offset)
+		position += transform.x * speed * delta + transform.y*sin(offset)*0.5
 	else:
-		position += transform.x * speed * delta + transform.y*sin(offset)*-1
+		position += transform.x * speed * delta + transform.y*sin(offset)*-1*0.5
 
 func _on_shoot_timer_timeout() -> void:
 	for s in rotator.get_children():
