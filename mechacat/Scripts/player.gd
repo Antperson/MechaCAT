@@ -20,6 +20,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("slash") && isShooting == false:
 		isSlashing == true
 		$AnimatedSprite2D.play("Slash")
+		$SlashArea/CollisionShape2D.disabled = false;
 	if Input.is_action_just_pressed("shoot")&& isSlashing == false:
 		shoot()
 		isShooting == true
@@ -60,6 +61,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "Slash":
 		isSlashing == false
+		$SlashArea/CollisionShape2D.disabled = true;
 		$AnimatedSprite2D.play("Idle")
 	if $AnimatedSprite2D.animation == "Shoot":
 		isShooting == false

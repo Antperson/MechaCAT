@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dtwj1wjmxf1es"]
+[gd_scene load_steps=36 format=3 uid="uid://dtwj1wjmxf1es"]
 
 [ext_resource type="Script" uid="uid://o3u6lxfpl6rs" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://1x0gd3gget8j" path="res://Main Character/MechaCat_Firing.png" id="2_6t5aa"]
@@ -215,6 +215,9 @@ radius = 14.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_fkybt"]
 radius = 14.0357
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3wgy"]
+size = Vector2(27, 65.75)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
 
@@ -248,6 +251,12 @@ collision_mask = 2
 position = Vector2(0, -26)
 shape = SubResource("CircleShape2D_fkybt")
 debug_color = Color(0.839445, 0.314784, 0.570753, 0.42)
+
+[node name="SlashArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlashArea"]
+position = Vector2(31.5, -22.875)
+shape = SubResource("RectangleShape2D_x3wgy")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]
